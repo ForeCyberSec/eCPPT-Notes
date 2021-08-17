@@ -1,4 +1,4 @@
-# first used a simple spike script to fuzz the application. shown below
+# first used a spike script to fuzz the application. shown below
 
 s_readline();
 s_string("TRUN ");

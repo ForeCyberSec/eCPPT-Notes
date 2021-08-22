@@ -5,6 +5,32 @@ sudo openvpn
 
 
 
+# Terminator keybinds 
+
+//move around by word
+ctrl + fn + left or right arrow
+
+//delete whole word 
+alt + backspace
+
+//split horizontally 
+ctrl + super + c
+
+//split vertically
+ctrl + super + v
+
+//close terminal
+shift + ctrl + w
+
+//restore default zoom
+ctrl + 0
+
+//fullscreen a specific pane 
+ctrl + shift + Z
+
+
+
+
 # Typical nmap commands 
 
 //update scripts database
@@ -95,3 +121,10 @@ john --wordlist=/home/kali/Desktop/rockyou.txt --format=NT /home/kali/Desktop/ha
 unshadow [passwdfile] [shadowfile] > [output file name]
 
 john --wordlist=/usr/share/john/password.lst [output file name]
+
+
+# enum4linux 
+
+
+
+enum4linux.pl -a <targetIP> | tee enum4linux.log

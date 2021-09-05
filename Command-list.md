@@ -127,3 +127,12 @@ john --wordlist=/usr/share/john/password.lst [output file name]
 
 
 enum4linux.pl -a <targetIP> | tee enum4linux.log
+
+
+
+# PowerShell
+
+
+
+
+

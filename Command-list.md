@@ -79,6 +79,10 @@ ssh -L localport:target:remoteport Name@sshserver.com
 
 
 
+# smbclient
+
+smbclient \\\\targetmachine\\some-share -U username
+
 
 
 # MSF Venom

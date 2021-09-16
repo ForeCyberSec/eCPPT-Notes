@@ -70,6 +70,15 @@ arp   (show the ARP cache)
 netstat
 
 
+//this tells metasploit to route all traffic intended for network (1.1.1.0/24) 
+through session 2 (our meterpreter session) just run this command from msfconsole
+route add 1.1.1.0/24 255.255.255.0 2
+
+
+// or we can run a script directly from a meterpreter session that does the same thing as the command above this one
+run autoroute -s 1.1.1.0/24
+
+
 //this scan runs from an exploited machine to avoid IDS and firewalls, to
 discover other hosts of an internal network. Run in meterpreter
 run arp_scanner -r 10.10.10.0/24 

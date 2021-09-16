@@ -75,7 +75,8 @@ through session 2 (our meterpreter session) just run this command from msfconsol
 route add 1.1.1.0/24 255.255.255.0 2
 
 
-// or we can run a script directly from a meterpreter session that does the same thing as the command above this one
+// or we can run a script directly from a meterpreter session that does the sam
+ thing as the command above this one
 run autoroute -s 1.1.1.0/24
 
 

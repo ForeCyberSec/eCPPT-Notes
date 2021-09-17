@@ -285,6 +285,8 @@ proxychains ssh <targetIP>
 
 proxychains telnet <targetIP>
 
+//this opens a web browser with proxychains
+proxychains4 iceweasel
 
 ---------------------------------
 

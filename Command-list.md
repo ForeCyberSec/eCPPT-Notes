@@ -225,5 +225,46 @@ search -d /pathtobeginsearch -f *.extension
 run post/windows/gather/
 
 
+//the -l opens a listener port on our local machine, and forwards the connection to 
+the target IP on the -p port specified 
+portfwd add -l <LPORT> -p <porttoconnectto> -r <targetIP>
+
 
 ---------------------------------
+
+
+# Metasploit 
+
+//use the socks4a module for pivoting with proxychains
+
+
+
+
+---------------------------------
+
+
+# Helpfu notes/tips
+
+Pivoting is covered in the networksecurity/postexploitation/networkmap_and_pivot
+folder
+
+
+
+# proxychains
+
+//To configure proxychains, let us open the proxychain.conf file (you can find it
+in /etc), and change the last line as follows: 
+
+[proxylist] 
+# add proxy here
+# meanwhile
+# defaults set to "tor"
+socks4 127.0.0.1 1080 (the port that is set in metslpoits socks4a module goes here) 
+
+
+proxychains nmap <options> <targetIP> 
+
+//if there are other services we can also use these to connect to them
+proxychains ssh <targetIP>
+
+proxychains telnet <targetIP>

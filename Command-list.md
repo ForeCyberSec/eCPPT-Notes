@@ -221,12 +221,9 @@ powershell folder
 
 search -d /pathtobeginsearch -f *.extension
 
-//helpful post-exploit enum scripts here
-run post/windows/gather/
-
-
 //the -l opens a listener port on our local machine, and forwards the connection to 
 the target IP on the -p port specified 
+
 portfwd add -l <LPORT> -p <porttoconnectto> -r <targetIP>
 
 
@@ -237,7 +234,15 @@ portfwd add -l <LPORT> -p <porttoconnectto> -r <targetIP>
 
 //use the socks4a module for pivoting with proxychains
 
+//we can use this and set the session to an active meterpreter session to scan the
+network from a victim machine if needed
 
+use post/multi/gather/ping_sweep
+
+
+//helpful post-exploit enum scripts here
+
+run post/windows/gather/
 
 
 ---------------------------------
@@ -282,8 +287,11 @@ proxychains telnet <targetIP>
 //To check the DNS servers 
 ipconfig /displaydns
 
+
 //To check open connections 
 netstat -ano
+
+
 
 
 ---------------------------------

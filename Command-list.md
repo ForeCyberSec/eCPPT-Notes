@@ -230,6 +230,10 @@ the target IP on the -p port specified
 portfwd add -l <LPORT> -p <porttoconnectto> -r <targetIP>
 
 
+//To check the DNS servers you can open a shell on the target and then run 
+ipconfig /displaydns
+
+
 ---------------------------------
 
 

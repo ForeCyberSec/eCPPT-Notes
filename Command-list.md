@@ -266,13 +266,16 @@ folder
 # Proxychains
 
 //To configure proxychains, let us open the proxychain.conf file (you can find it
-in /etc), and change the last line as follows: 
+in /etc), and change the last line. First run this command: 
+
+sudo vim /etc/proxychains.conf
 
 [proxylist] 
 # add proxy here
 # meanwhile
 # defaults set to "tor"
-socks4 127.0.0.1 1080 (the port that is set in metslpoits socks4a module goes here) 
+socks4 127.0.0.1 1080 (the port that is set in metaslpoits socks4a module goes
+here) 
 
 
 proxychains nmap <options> <targetIP> 

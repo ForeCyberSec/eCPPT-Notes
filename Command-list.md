@@ -230,10 +230,6 @@ the target IP on the -p port specified
 portfwd add -l <LPORT> -p <porttoconnectto> -r <targetIP>
 
 
-//To check the DNS servers you can open a shell on the target and then run 
-ipconfig /displaydns
-
-
 ---------------------------------
 
 
@@ -247,14 +243,17 @@ ipconfig /displaydns
 ---------------------------------
 
 
-# Helpfu notes/tips
+# Helpful notes/tips
 
 Pivoting is covered in the networksecurity/postexploitation/networkmap_and_pivot
 folder
 
 
+---------------------------------
 
-# proxychains
+
+
+# Proxychains
 
 //To configure proxychains, let us open the proxychain.conf file (you can find it
 in /etc), and change the last line as follows: 
@@ -272,3 +271,19 @@ proxychains nmap <options> <targetIP>
 proxychains ssh <targetIP>
 
 proxychains telnet <targetIP>
+
+
+---------------------------------
+
+
+
+# Windows shell commands
+
+//To check the DNS servers 
+ipconfig /displaydns
+
+//To check open connections 
+netstat -ano
+
+
+---------------------------------

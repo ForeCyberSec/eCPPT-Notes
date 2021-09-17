@@ -245,6 +245,11 @@ use post/multi/gather/ping_sweep
 run post/windows/gather/
 
 
+//use this module to set up the pivoting environment if not using proxychains, the
+mapping the network video explains this if help is needed
+
+use post/windows/manage/autoroute
+
 ---------------------------------
 
 

@@ -34,24 +34,33 @@ ctrl + shift + Z
 ---------------------------------
 
 
-# Typical nmap commands 
+# Nmap 
 
 //update scripts database
 nmap --script-updatedb
 
+
 //ping sweep, we can run this first to discover hosts
 nmap -sn 
 
+
 //also we can try running no ping to see any extra hosts hidden behind firewalls
 nmap -n -sn
+
 
 //Once we have hosts we can scan targets to check OS and service/version and run
 default scripts
 nmap -T4 -O -sV -sC
 
+
 //if all ports are filtered on a host be sure to check for openings on udp port
 161/ (SNMP)
 nmap -sU -p 161,162 
+
+
+//this is for NFS enumeration on Linux if rpc services are found
+nmap --script nfs-ls,nfs-showmount,nfs-statfs <targetIP>
+
 
 
 ---------------------------------

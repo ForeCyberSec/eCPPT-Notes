@@ -61,6 +61,9 @@ nmap -sU -p 161,162
 //this is for NFS enumeration on Linux if rpc services are found
 nmap --script nfs-ls,nfs-showmount,nfs-statfs <targetIP>
 
+//Linux SMB enumeration
+nmap --script smb-enum-shares <targetIP>
+
 
 
 ---------------------------------

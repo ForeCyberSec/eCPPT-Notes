@@ -69,15 +69,12 @@ example
 basically we need to use some location that tells the EIP register, we want it to jump over to
 the ESP register and execute the code thats included in that data
 
+
 so we need to find a jmp esp instruction
 
-we can use mona.py for that 
 
-mona is a tool that we could use for this
-
-in the debugger terminal at the bottom we can run 
-
-!mono to bring up the module, then run 
+we can use mona.py for that, mona is a tool that we could use for this in the debugger terminal, at the
+bottom we can run: "!mona" to bring up the module, then run: 
 
 
 #this tells mona we want to find a jmp instruction that jumps to the esp register

